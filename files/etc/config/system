@@ -1,0 +1,39 @@
+
+config system
+	option ttylogin '0'
+	option log_size '512'
+	option urandom_seed '0'
+	option compat_version '1.1'
+	option timezone 'CST-8'
+	option zonename 'Asia/Shanghai'
+	option log_proto 'udp'
+	option conloglevel '3'
+	option cronloglevel '9'
+	option hostname 'BI4PCS_IPTV'
+
+config timeserver 'ntp'
+	list server 'ntp.tencent.com'
+	list server 'ntp1.aliyun.com'
+	list server 'ntp.ntsc.ac.cn'
+	list server 'cn.ntp.org.cn'
+
+config led 'led_internet'
+	option trigger 'netdev'
+	option name 'CHINA_TELECOM'
+	option sysfs 'white:status'
+	option dev 'lan1'
+	list mode 'link'
+	list mode 'rx'
+
+config imm_init
+	option ipv6 '1'
+	option lang '1'
+	option system_chn '1'
+
+config led
+	option name 'SDYX'
+	option sysfs 'red:system'
+	option trigger 'netdev'
+	option dev 'lan2'
+	list mode 'rx'
+
